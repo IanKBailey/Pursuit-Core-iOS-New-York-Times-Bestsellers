@@ -11,7 +11,7 @@ import Foundation
 extension String {
   // create a formatted date from ISO
   // e.g "MMM d, yyyy hh:mm a"
-  // e.g usage addedAt.formattedDate("MMM d, yyyy")
+  // e.g usage addedAt.formattedISODateString("MMMM dd, yyyy")
   public func formatISODateString(dateFormat: String) -> String {
     var formatDate = self
     let isoDateFormatter = ISO8601DateFormatter()
@@ -25,6 +25,8 @@ extension String {
   
   // e.g usage createdAt.date()
   public func date() -> Date {
+    //get an ISO timestamp
+    //e.g let timestamp = date()
     var date = Date()
     let isoDateFormatter = ISO8601DateFormatter()
     if let isoDate = isoDateFormatter.date(from: self) {
