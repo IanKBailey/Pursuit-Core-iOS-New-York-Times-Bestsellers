@@ -12,11 +12,12 @@ class TabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .green
         let bsTab = BSViewController()
         let favorite = FavoritesViewController()
-        bsTab.tabBarItem = UITabBarItem(tabBarSystemItem: .featured, tag: 0)
+        bsTab.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 0)
         favorite.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        
         let tabBarList = [bsTab,favorite]
         viewControllers = tabBarList
     }
