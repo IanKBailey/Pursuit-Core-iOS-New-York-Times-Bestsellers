@@ -9,21 +9,27 @@
 import UIKit
 
 class BSViewController: UIViewController {
+    let test = BSCollectionViewCell()
 
     
     lazy var collectionView: UICollectionView = {
         
+        
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize.init(width: 50, height: 50)
+        layout.itemSize = CGSize.init(width: 300, height: 300)
         layout.sectionInset = UIEdgeInsets.init(top: 20, left: 10, bottom: 20, right: 10)
         let cv = UICollectionView.init(frame: CGRect.init(x: 11, y: 100, width: 390.0, height: 400.0) , collectionViewLayout: layout)
         cv.backgroundColor = .blue
         cv.dataSource = self
+        layout.scrollDirection = .horizontal
+    
         return cv
     }()
     
-    
-    
+   
+    //height and width with multiplier to top
+    //label to bottom of image
+    //text view to bottom of label
     
     
     
@@ -32,6 +38,7 @@ class BSViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .green
        self.view.addSubview(collectionView)
+        
         collectionView.register(BSCollectionViewCell.self, forCellWithReuseIdentifier: "BSCell")
     }
 
@@ -40,7 +47,7 @@ class BSViewController: UIViewController {
 
 extension BSViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
