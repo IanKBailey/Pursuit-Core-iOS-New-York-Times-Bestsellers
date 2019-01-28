@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  FavoritesViewController.swift
 //  NYTBestsellers
 //
 //  Created by Ian Bailey on 1/25/19.
@@ -8,11 +8,12 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class FavoritesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .yellow
+        
         // Do any additional setup after loading the view.
     }
     
