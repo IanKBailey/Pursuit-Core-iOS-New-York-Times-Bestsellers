@@ -22,14 +22,15 @@ class BSViewController: UIViewController {
         cv.backgroundColor = .blue
         cv.dataSource = self
         layout.scrollDirection = .horizontal
-    
         return cv
     }()
     
-   
-    //height and width with multiplier to top
-    //label to bottom of image
-    //text view to bottom of label
+    lazy var pickerView: UIPickerView = {
+        let pv = UIPickerView.init(frame: CGRect.init(x: 11, y: 500, width: 390.0, height: 300.0))
+        pv.backgroundColor = .red
+        return pv
+    }()
+    
     
     
     
@@ -38,6 +39,7 @@ class BSViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .green
        self.view.addSubview(collectionView)
+        self.view.addSubview(pickerView)
         
         collectionView.register(BSCollectionViewCell.self, forCellWithReuseIdentifier: "BSCell")
     }
