@@ -12,14 +12,10 @@ class SettingViewController: UIViewController {
 
     
     let SV = SettingView()
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .magenta
         self.view.addSubview(SV)
-        // Do any additional setup after loading the view.
     }
     
 

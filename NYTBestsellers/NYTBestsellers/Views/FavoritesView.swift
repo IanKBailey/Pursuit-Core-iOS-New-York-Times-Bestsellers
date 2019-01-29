@@ -31,13 +31,7 @@ class FavoritesView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
-    
 }
-
-
-
 
 extension FavoritesView: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

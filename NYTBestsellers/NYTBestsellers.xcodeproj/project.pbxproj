@@ -18,6 +18,8 @@
 		5673F43721FFC7400000F8F7 /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673F43621FFC7400000F8F7 /* FavoritesCollectionViewCell.swift */; };
 		5673F43A2200D5D00000F8F7 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673F4392200D5D00000F8F7 /* SettingView.swift */; };
 		5673F43C2200D5F50000F8F7 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673F43B2200D5F50000F8F7 /* SettingViewController.swift */; };
+		5673F43E2200E8060000F8F7 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673F43D2200E8060000F8F7 /* PickerView.swift */; };
+		5673F4412200F1160000F8F7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5673F4402200F1160000F8F7 /* APIClient.swift */; };
 		5718BFE921FA75A800A8E4B8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5718BFE821FA75A800A8E4B8 /* AppDelegate.swift */; };
 		5718BFF021FA75A900A8E4B8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5718BFEF21FA75A900A8E4B8 /* Assets.xcassets */; };
 		5718BFF321FA75A900A8E4B8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5718BFF121FA75A900A8E4B8 /* LaunchScreen.storyboard */; };
@@ -41,6 +43,8 @@
 		5673F43621FFC7400000F8F7 /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewCell.swift; sourceTree = "<group>"; };
 		5673F4392200D5D00000F8F7 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		5673F43B2200D5F50000F8F7 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		5673F43D2200E8060000F8F7 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
+		5673F4402200F1160000F8F7 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		5718BFE521FA75A800A8E4B8 /* NYTBestsellers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NYTBestsellers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5718BFE821FA75A800A8E4B8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5718BFEF21FA75A900A8E4B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +101,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		5673F43F2200E8190000F8F7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5673F43D2200E8060000F8F7 /* PickerView.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5718BFDC21FA75A800A8E4B8 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +128,7 @@
 		5718BFE721FA75A800A8E4B8 /* NYTBestsellers */ = {
 			isa = PBXGroup;
 			children = (
+				5673F43F2200E8190000F8F7 /* Models */,
 				5673F4382200D2C40000F8F7 /* Cells */,
 				5673F3E721FBBCEC0000F8F7 /* Views */,
 				5673F3E621FBBCCC0000F8F7 /* View Controllers */,
@@ -144,6 +157,7 @@
 				5718C00121FA772600A8E4B8 /* AppError.swift */,
 				5718C00521FA78BA00A8E4B8 /* ImageHelper.swift */,
 				5718BFFF21FA771800A8E4B8 /* NetworkHelper.swift */,
+				5673F4402200F1160000F8F7 /* APIClient.swift */,
 			);
 			path = "Network Services";
 			sourceTree = "<group>";
@@ -238,6 +252,7 @@
 				5673F3ED21FBCE570000F8F7 /* FavoritesView.swift in Sources */,
 				5673F3EB21FBBE110000F8F7 /* BSView.swift in Sources */,
 				5673F43721FFC7400000F8F7 /* FavoritesCollectionViewCell.swift in Sources */,
+				5673F4412200F1160000F8F7 /* APIClient.swift in Sources */,
 				5718C00021FA771800A8E4B8 /* NetworkHelper.swift in Sources */,
 				5718BFFC21FA763200A8E4B8 /* String+DateExtensions.swift in Sources */,
 				5673F43C2200D5F50000F8F7 /* SettingViewController.swift in Sources */,
@@ -246,6 +261,7 @@
 				5718C00421FA77AA00A8E4B8 /* DataPersistenceManager.swift in Sources */,
 				5673F3F321FBCEE40000F8F7 /* FavoriteDetailViewController.swift in Sources */,
 				5673F43A2200D5D00000F8F7 /* SettingView.swift in Sources */,
+				5673F43E2200E8060000F8F7 /* PickerView.swift in Sources */,
 				5673F3EF21FBCE720000F8F7 /* FavoritesViewController.swift in Sources */,
 				5718BFE921FA75A800A8E4B8 /* AppDelegate.swift in Sources */,
 				5673F43521FF91870000F8F7 /* BSCollectionViewCell.swift in Sources */,

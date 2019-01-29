@@ -12,16 +12,11 @@ class BSViewController: UIViewController {
 
 
      let bsView = BSView()
-
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .green
         self.view.addSubview(bsView)
     }
-
-
 }
 
 
