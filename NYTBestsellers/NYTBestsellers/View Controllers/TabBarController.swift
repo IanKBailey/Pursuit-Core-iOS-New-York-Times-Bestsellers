@@ -15,12 +15,14 @@ class TabBarController: UITabBarController {
         view.backgroundColor = .magenta
         let bsTab = BSViewController()
         let favorite = FavoritesViewController()
+        let settings = SettingViewController()
         bsTab.title = "Best Sellers"
         favorite.title = "Favorites"
+        settings.title = "Settings"
         bsTab.tabBarController?.tabBar.items?[0].image = UIImage(named: "BestSeller")
         favorite.tabBarController?.tabBar.items?[1].image = UIImage(named: "Bookmark")
-//        tabBarController!.tabBar.items?[2].image = UIImage(named: "Setting")
-        let tabBarList = [bsTab,favorite]
+        settings.tabBarController?.tabBar.items?[2].image = UIImage(named: "Settings")
+        let tabBarList = [bsTab,favorite,settings]
         viewControllers = tabBarList
     }
     

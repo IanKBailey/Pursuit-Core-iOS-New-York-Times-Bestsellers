@@ -31,7 +31,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     
     lazy var settingsButton: UIButton = {
         let button = UIButton()
-        
+        button.setImage(UIImage.init(named: "threedots"), for: .normal)
         
         return button
     }()
@@ -44,9 +44,11 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         addSubview(imageView)
         addSubview(label)
         addSubview(cellTextView)
+        addSubview(settingsButton)
         imageConstraints()
         labelConstraints()
         textViewConstraints()
+        buttonConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -77,10 +79,14 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         cellTextView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 1).isActive = true
         cellTextView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
-        
-        
     }
     
+    func buttonConstraints() {
+        settingsButton.translatesAutoresizingMaskIntoConstraints = false
+        settingsButton.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        settingsButton.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        
+    }
     
     
     
