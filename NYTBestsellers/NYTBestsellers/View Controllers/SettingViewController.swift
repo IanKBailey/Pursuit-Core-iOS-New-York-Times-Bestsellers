@@ -11,22 +11,48 @@ import UIKit
 class SettingViewController: UIViewController {
 
     
-    let SV = SettingView()
+   let SV = SettingView()
+    private var genre = [Genre]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.SV.SettingsPickerView.reloadAllComponents()
+            }
+        }
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .magenta
         self.view.addSubview(SV)
+        SV.SettingsPickerView.dataSource = self
+        SV.SettingsPickerView.delegate = self
+        getPicker()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func getPicker() {
+        APIClient.pickerData { (error, genre) in
+            if let error = error {
+                print(error.errorMessage())
+            } else if let data = genre {
+                self.genre = data
+                
+            }
+        }
     }
-    */
-
 }
+extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return genre.count
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return genre[row].listName
+    }
+        
+    }
+

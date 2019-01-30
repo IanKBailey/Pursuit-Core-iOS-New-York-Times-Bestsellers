@@ -18,8 +18,8 @@ final class APIClient {
             }
             if let data = data {
                 do {
-                    let genreInfo = try JSONDecoder().decode([Genre].self, from: data)
-                    completionHandler(nil, genreInfo)
+                    let genreInfo = try JSONDecoder().decode(PickerData.self, from: data)
+                    completionHandler(nil, genreInfo.results)
                 } catch {
                     completionHandler(AppError.jsonDecodingError(error), nil)
                 }

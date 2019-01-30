@@ -50,5 +50,4 @@ extension BSView: UICollectionViewDataSource, UICollectionViewDelegate {
         return cell
 }
 
-
 }
