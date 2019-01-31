@@ -14,18 +14,18 @@ class BSCollectionViewCell: UICollectionViewCell {
         let image = UIImageView(image: UIImage(named: "book"))
         return image
     }()
+    
     lazy var label: UILabel = {
         let label = UILabel()
-        label.text = "Hello"
         label.textColor = .black
         label.textAlignment = .center
-        
         return label
     }()
     
     lazy var cellTextView: UITextView = {
         let text = UITextView()
-        text.backgroundColor = .black
+        text.backgroundColor = .white
+        text.textColor = .black
         return text
     }()
     
@@ -82,4 +82,7 @@ class BSCollectionViewCell: UICollectionViewCell {
         
     }
     
+ 
 }
+
+

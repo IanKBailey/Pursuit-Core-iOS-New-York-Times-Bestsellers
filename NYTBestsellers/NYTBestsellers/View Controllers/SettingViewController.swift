@@ -53,6 +53,5 @@ extension SettingViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return genre[row].listName
     }
-        
-    }
+}
 

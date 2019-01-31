@@ -15,6 +15,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         let image = UIImageView(image: UIImage(named: "book"))
         return image
     }()
+    
     lazy var label: UILabel = {
         let label = UILabel()
         label.text = "Hello"
@@ -36,8 +37,6 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
-    
-    
     override init(frame:CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
@@ -45,24 +44,20 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         addSubview(label)
         addSubview(cellTextView)
         addSubview(settingsButton)
-        imageConstraints()
-        labelConstraints()
-        textViewConstraints()
-        buttonConstraints()
+        setupConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+func setupConstraints() {
     func imageConstraints() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 11).isActive = true
         imageView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.5).isActive = true
         imageView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 0.5).isActive = true
         imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-    
-    
     }
     
     func labelConstraints() {
@@ -78,16 +73,12 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
         cellTextView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.4).isActive = true
         cellTextView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 1).isActive = true
         cellTextView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        
     }
     
     func buttonConstraints() {
         settingsButton.translatesAutoresizingMaskIntoConstraints = false
         settingsButton.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         settingsButton.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
-        
+        }
     }
-    
-    
-    
 }

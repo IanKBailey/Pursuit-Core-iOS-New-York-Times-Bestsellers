@@ -15,15 +15,14 @@ class BSView: UIView {
         layout.itemSize = CGSize.init(width: 300, height: 300)
         layout.sectionInset = UIEdgeInsets.init(top: 20, left: 10, bottom: 20, right: 10)
         let cv = UICollectionView.init(frame: CGRect.init(x: 11, y: 100, width: 390.0, height: 400.0) , collectionViewLayout: layout)
-        cv.backgroundColor = .blue
-        cv.dataSource = self
+        cv.backgroundColor = .white
         layout.scrollDirection = .horizontal
         return cv
     }()
     
     lazy var pickerView: UIPickerView = {
         let pv = UIPickerView.init(frame: CGRect.init(x: 11, y: 500, width: 390.0, height: 300.0))
-        pv.backgroundColor = .red
+        pv.backgroundColor = .gray
         return pv
     }()
     
@@ -39,15 +38,4 @@ class BSView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 }
-extension BSView: UICollectionViewDataSource, UICollectionViewDelegate {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BSCell", for: indexPath) as?
-            BSCollectionViewCell else { return UICollectionViewCell()}
-        return cell
-}
 
-}
