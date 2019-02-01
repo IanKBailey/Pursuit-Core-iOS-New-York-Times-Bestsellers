@@ -9,4 +9,5 @@
 import Foundation
 struct SecretKeys {
     static let timesBestKey = "l5l1DgBJNv1fcaaAGba6Sn1DSHRH9gAv"
+    static let googlekey = "AIzaSyD0i8x5zITIEyrHDkqFIpMyP1aQmlColwQ"
 }

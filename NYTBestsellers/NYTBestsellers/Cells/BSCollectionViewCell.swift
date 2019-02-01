@@ -35,8 +35,6 @@ class BSCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
-        
         self.backgroundColor = .white
         addSubview(label)
         addSubview(imageView)
@@ -44,16 +42,12 @@ class BSCollectionViewCell: UICollectionViewCell {
         imageConstraints()
         labelConstraints()
         textViewConstraints()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    
-   
 
     func imageConstraints() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -77,9 +71,6 @@ class BSCollectionViewCell: UICollectionViewCell {
         cellTextView.heightAnchor.constraint(equalTo: safeAreaLayoutGuide.heightAnchor, multiplier: 0.4).isActive = true
         cellTextView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor, multiplier: 1).isActive = true
         cellTextView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-       
-        
-        
     }
     
  

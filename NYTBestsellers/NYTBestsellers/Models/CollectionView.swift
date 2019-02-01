@@ -30,5 +30,15 @@ struct BookDetails: Codable {
     let contributor: String
     let author: String
     let publisher: String
-
+    let primaryIsbn: String
+    private enum CodingKeys: String, CodingKey {
+        case title
+        case description
+        case contributor
+        case author
+        case publisher
+        case primaryIsbn = "primary_isbn13"
+    }
 }
+
+

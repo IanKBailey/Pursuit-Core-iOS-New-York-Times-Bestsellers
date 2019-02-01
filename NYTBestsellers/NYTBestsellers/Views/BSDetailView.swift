@@ -8,14 +8,30 @@
 
 import UIKit
 
-class BSDetailView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+class DetailView: UIView {
+        
+        lazy var imageView: UIImageView = {
+            let iV = UIImageView.init(frame: CGRect.init(x: 11, y: 100, width: 390.0, height: 400.0))
+            iV.backgroundColor = .red
+            
+            return iV
+        }()
+    
+        lazy var label: UILabel = {
+            let label = UILabel.init()
+            return label
+        }()
+        
+        
+        
+        override init(frame: CGRect) {
+            super.init(frame: UIScreen.main.bounds)
+            addSubview(imageView)
+        }
+        
+        required init?(coder aDecoder: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
     }
-    */
 
-}
+

@@ -8,7 +8,10 @@
 
 import Foundation
 
-var keyword = "Hardcover+Nonfiction"
+//https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)&key=\(SecretKeys.googlekey)
+
+
+var isbn = ""
 final class APIClient {
     static func pickerData(completionHandler: @escaping ((AppError?, [Genre]?)-> Void)) {
         let url = "https://api.nytimes.com/svc/books/v3/lists/names.json?api-key=\(SecretKeys.timesBestKey)"
@@ -27,14 +30,14 @@ final class APIClient {
         }
     }
     
-    static func bookData(completionHandler: @escaping ((AppError?, [Books]?) -> Void )) {
+    static func bookData(searchKeyword: String, completionHandler: @escaping ((AppError?, [Books]?) -> Void )) {
         var endpoint = ""
        
-        guard keyword.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) != nil else {
+        guard searchKeyword.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) != nil else {
             print("encoding error bad keyword")
             return
         }
-        endpoint = "https://api.nytimes.com/svc/books/v3/lists.json?api-key=\(SecretKeys.timesBestKey)&list=\(keyword)"
+        endpoint = "https://api.nytimes.com/svc/books/v3/lists.json?api-key=\(SecretKeys.timesBestKey)&list=\(searchKeyword)"
         NetworkHelper.shared.performDataTask(endpointURLString: endpoint) { (error, data) in
             if let error = error {
                 completionHandler(error, nil)
@@ -49,5 +52,25 @@ final class APIClient {
             }
         }
     }
+    static func getGoogleData (isbn: String, completionHandler: @escaping ((AppError?, [ImageInfo]?) -> Void )) {
+        let url = "https://www.googleapis.com/books/v1/volumes?q=isbn:\(isbn)&key=\(SecretKeys.googlekey)"
+        NetworkHelper.shared.performDataTask(endpointURLString: url) { (error, data) in
+            if let error = error {
+                completionHandler(error, nil)
+            }
+            if let data = data {
+                do {
+                    let imageData = try JSONDecoder().decode(ImageData.self, from: data)
+                    completionHandler(nil, imageData.items)
+                } catch {
+                    completionHandler(AppError.jsonDecodingError(error), nil)
+                }
+            }
+        }
+    }
+    
+        
+    
+    
 }
 

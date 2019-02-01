@@ -10,9 +10,12 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    let imageView = DetailView()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.addSubview(imageView)
         
     }
     
